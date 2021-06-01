@@ -28,7 +28,7 @@ export default {
     Mutation: {
         async createPost(_, { body }, context){
             const user = checkAuth(context);
-            console.log(user)
+            // console.log(user)
 
             if (args.body.trim() === ''){
                 throw new Error('Post body must not be empty');

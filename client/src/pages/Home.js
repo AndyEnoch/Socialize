@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import './Home.css';
+import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import PostCard from '../components/PostCard';
-import './Home.css';
 import Header from '../components/Header';
 
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
+import Widgets from '../components/Widgets';
 
 function Home() {
 
@@ -17,25 +19,35 @@ function Home() {
 
     return (
         <div className='home'>
-            <div className='sidebar'>
-                <Sidebar/>
-            </div>
-            <div className='body'>
+                <div className='sidebar'>
+                    <Sidebar/>
+                </div>
                 <div className='header'>
-                    <Header/>
+                        <Navbar />
+                    </div>
+                <div className='body'>
+                    <div className='body__feed'>
+                        <div className='post__form'>
+                            <Header/>
+                        </div>
+                        <div className='posts'>
+                            {loading ? (
+                                <h2>Loading Posts</h2>
+                            ) : (
+                                data.getPosts && data.getPosts.map((post) => (
+                                    <div className='post' key={post.id}>
+                                        <PostCard post={post}/>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </div>
+                    <div className='widgets'>
+                        <Widgets/>
+                    </div>
+                    
                 </div>
-                <div className='posts'>
-                    {loading ? (
-                        <h2>Loading Posts</h2>
-                    ) : (
-                        data.getPosts && data.getPosts.map((post) => (
-                            <div className='post' key={post.id}>
-                                <PostCard post={post}/>
-                            </div>
-                        ))
-                    )}
-                </div>
-            </div>
+            
         </div>
     )
 }
