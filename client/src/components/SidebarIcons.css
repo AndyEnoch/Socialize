@@ -1,0 +1,21 @@
+.sidebarIcons {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.sidebarIcons > span {
+    font-size: 1rem;
+    padding-left: 1rem;
+    color: #0F292F;
+} 
+
+.sidebarIcons > .MuiSvgIcon-root {
+    color: #0F292F;
+}
+
+.sidebarIcons > .sidebar__active {
+    background: #fff;
+}

@@ -1,3 +1,11 @@
-.home {
-    display: flex;
+.body {
+   margin-left: 300px;
+   margin-top: 50px;
+   padding: 2rem 1.5rem;
+   background: #f1f5f9;
+   min-height: calc(100vh - 100px);
+   /* display: flex; */
+   display: grid;
+   grid-gap: 2rem;
+   grid-template-columns: 60% auto;
 }

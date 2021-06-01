@@ -10,12 +10,13 @@ function Navbar() {
                 <div className="navbar__menu">
                     <div className="nav__menu">
                         <Menu/>
+                       
                     </div>
                     <strong>Doggito</strong>
                 </div>
                 <div className="navbar__center">
-                    <input placeholder='Search' type='text'/>
                     <Search />
+                    <input placeholder='Search' type='search'/>
                 </div>
                 <div className='navbar__right'>
                     <div className="navbar__icons">
@@ -27,8 +28,11 @@ function Navbar() {
                         </div>
                     </div>
                     <div className='navbar__user'>
-                        <Avatar />
-                        <h4>Username</h4>
+                        <Avatar src='https://avatarfiles.alphacoders.com/238/238252.jpg'/>
+                        <div className='navbar__userName'>
+                            <small>Username</small>
+                            {/* <small>View Profile</small> */}
+                        </div>
                     </div>
                 </div>
             </div>
